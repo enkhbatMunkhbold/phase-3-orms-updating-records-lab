@@ -1,0 +1,13 @@
+require 'pry'
+require_relative '../config/environment'
+
+def reset_database
+  Student.drop_table
+  Student.create_table
+  Student.create('Bob', '4')
+  Student.create('Susan', '3.75')
+end
+
+reset_database
+
+binding.pry
